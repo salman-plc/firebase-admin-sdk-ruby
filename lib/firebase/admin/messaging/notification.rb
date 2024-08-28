@@ -15,6 +15,10 @@ module Firebase
         #   Image url of the notification.
         attr_accessor :image
 
+        # @return [Integer, nil]
+        #   Badge count.
+        attr_accessor :badge
+
         # Initializes a {Notification}.
         #
         # @param [String, nil] title
@@ -23,10 +27,11 @@ module Firebase
         #   Body of the notification (optional).
         # @param [String, nil]
         #   Image url of the notification (optional).
-        def initialize(title: nil, body: nil, image: nil)
+        def initialize(title: nil, body: nil, image: nil, badge: nil)
           self.title = title
           self.body = body
           self.image = image
+          self.badge = badge
         end
       end
     end
