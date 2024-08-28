@@ -38,7 +38,10 @@ module Firebase
         # @return [String, nil]
         #   The FCM condition to which the message should be sent (optional).
         attr_accessor :condition
-
+        
+        #   A hash of data fields (optional). All keys and values must be strings.
+        attr_accessor :badge
+        
         # Initializes a {Message}.
         #
         # @param [Hash<String, String>, nil] data
@@ -66,7 +69,8 @@ module Firebase
           fcm_options: nil,
           token: nil,
           topic: nil,
-          condition: nil
+          condition: nil,
+          badge: nil
         )
           self.data = data
           self.notification = notification
@@ -76,6 +80,7 @@ module Firebase
           self.token = token
           self.topic = topic
           self.condition = condition
+          self.badge = badge
         end
       end
     end
