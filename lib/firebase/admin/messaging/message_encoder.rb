@@ -323,7 +323,8 @@ module Firebase
           result = {
             body: check_string("Notification.body", v.body),
             title: check_string("Notification.title", v.title),
-            image: check_string("Notification.image", v.image)
+            image: check_string("Notification.image", v.image),
+            badge: v.badge
           }
           remove_nil_values(result)
         end
